@@ -1,0 +1,117 @@
+1. List: Қала тізімін құру және басып шығару
+using System;
+using System.Collections.Generic;
+
+public class Program
+{
+    public static void Main()
+    { 
+        List<string> cities = new List<string> { "Алматы", "Астана", "Шымкент", "Қарағанды", "Тараз" };
+ 
+        Console.WriteLine("Қалалар тізімі:");
+        foreach (var city in cities)
+        {
+            Console.WriteLine(city);   
+        }
+    }
+}
+
+2. Stack: Қайтарылған кітаптарды сақтау
+using System;
+using System.Collections.Generic;
+
+public class Program
+{
+    public static void Main()
+    {
+        Stack<string> returnedBooks = new Stack<string>();
+        returnedBooks.Push("Кітап 1");
+        returnedBooks.Push("Кітап 2");
+        returnedBooks.Push("Кітап 3");
+        returnedBooks.Push("Кітап 4");
+ 
+        Console.WriteLine("\nСоңғы қосылған кітап:");
+        Console.WriteLine(returnedBooks.Pop()); 
+
+        Console.WriteLine("\nҚалған кітаптар:");
+        foreach (var book in returnedBooks)
+        {
+            Console.WriteLine(book);  
+        }
+    }
+}
+
+3. Queue: Кезектегі клиенттерді басқару
+using System;
+using System.Collections.Generic;
+
+public class Program
+{
+    public static void Main()
+    {
+        Queue<string> clientsQueue = new Queue<string>();
+        clientsQueue.Enqueue("Клиент 1");
+        clientsQueue.Enqueue("Клиент 2");
+        clientsQueue.Enqueue("Клиент 3");
+        clientsQueue.Enqueue("Клиент 4");
+        clientsQueue.Enqueue("Клиент 5");
+ 
+        Console.WriteLine("\nАлғашқы екі клиент:");
+        if (clientsQueue.Count > 0) Console.WriteLine(clientsQueue.Dequeue());
+        if (clientsQueue.Count > 0) Console.WriteLine(clientsQueue.Dequeue());
+
+        Console.WriteLine("\nҚалған клиенттер:");
+        foreach (var client in clientsQueue)
+        {
+            Console.WriteLine(client);
+        }
+    }
+}
+
+4. Dictionary: Бағалар тізімі
+using System;
+using System.Collections.Generic;
+
+public class Program
+{
+    public static void Main()
+    {
+        Dictionary<string, int> products = new Dictionary<string, int>
+        {
+            { "Нан", 120 },
+            { "Сүт", 200 },
+            { "Картоп", 150 },
+            { "Алма", 300 },
+            { "Қияр", 250 }
+        };
+ 
+        Console.WriteLine("\nТауар бағасын енгізіңіз:");
+        string productName = Console.ReadLine();
+
+        if (products.ContainsKey(productName))
+        {
+            Console.WriteLine($"{productName} бағасы: {products[productName]} теңге");
+        }
+        else
+        {
+            Console.WriteLine("Бұл тауар жоқ.");
+        }
+    }
+}
+
+
+5. Array: Ең үлкен санды табу
+using System;
+using System.Linq;  
+
+public class Program
+{
+    public static void Main()
+    {
+        int[] numbers = { 12, 45, 7, 89, 23 };
+ 
+        int maxNumber = numbers.Max();
+
+        Console.WriteLine("\nЕң үлкен сан: " + maxNumber);
+    }
+}
